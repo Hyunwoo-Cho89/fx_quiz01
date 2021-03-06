@@ -8,12 +8,20 @@ import javafx.scene.control.TextField;
 import quiz01.MemberService.MemberController;
 
 public class LoginServiceImpl implements LoginService{
-	@Override
+	Parent root;
 	
-	public void login(Parent root) {				
-		LoginController controller = new LoginController();
-		controller.setRoot(root);
+	@Override
+	public void setRoot(Parent root) {
+		this.root = root;
+		
+		login();
 		
 	}
-	
+	@Override
+	public void login() {
+		
+	}			
+		
+		
+		
 }

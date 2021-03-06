@@ -8,12 +8,4 @@ public class CommonServiceImpl {
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
 	}
-	
-	public void MemberSave(Parent root) {
-		
-	}
-	
-	public void MemberSerch(Parent root) {
-		
-	}
 }

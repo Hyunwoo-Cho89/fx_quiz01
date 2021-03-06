@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="306.0" prefWidth="293.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quiz01.MemberController">
+   <children>
+      <Label layoutX="87.0" layoutY="14.0" prefHeight="35.0" prefWidth="118.0" text="회원정보">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="67.0" lineSpacing="20.0" text="이   름">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="104.0" lineSpacing="20.0" text="아이디">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="143.0" lineSpacing="20.0" text="나   이">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="178.0" lineSpacing="20.0" text="성   별">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="218.0" lineSpacing="20.0" text="취    미">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameDisp" layoutX="95.0" layoutY="68.0" />
+      <TextField fx:id="idDisp" layoutX="95.0" layoutY="105.0" />
+      <TextField fx:id="ageDisp" layoutX="95.0" layoutY="144.0" />
+      <TextField fx:id="sexDisp" layoutX="95.0" layoutY="179.0" />
+      <TextField fx:id="hobbyDisp" layoutX="95.0" layoutY="219.0" />
+      <Button fx:id="btnSucess" layoutX="176.0" layoutY="256.0" mnemonicParsing="false" onAction="#memberSucess" prefHeight="35.0" prefWidth="99.0" text="확  인">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
