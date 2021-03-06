@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="txtPwdChk" prefHeight="302.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quiz01.MemberService.MemberController">
+   <children>
+      <Label layoutX="220.0" layoutY="14.0" prefHeight="38.0" prefWidth="122.0" text="회원가입">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="74.0" prefHeight="14.0" prefWidth="66.0" text="이       름">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="115.0" prefHeight="14.0" prefWidth="66.0" text="패스워드">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="284.0" layoutY="74.0" prefHeight="14.0" prefWidth="66.0" text="아  이  디">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="265.0" layoutY="115.0" prefHeight="19.0" prefWidth="105.0" text="패스워드 확인">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="txtPwd" layoutX="90.0" layoutY="114.0" prefHeight="22.0" prefWidth="162.0" />
+      <PasswordField layoutX="371.0" layoutY="114.0" prefHeight="22.0" prefWidth="162.0" />
+      <TextField fx:id="txtName" layoutX="90.0" layoutY="73.0" prefHeight="22.0" prefWidth="162.0" />
+      <TextField fx:id="txtId" layoutX="371.0" layoutY="73.0" prefHeight="22.0" prefWidth="162.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="157.0" prefHeight="14.0" prefWidth="66.0" text="성   별">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rdoMan" layoutX="117.0" layoutY="156.0" mnemonicParsing="false" text="남성">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rdoWoman" layoutX="191.0" layoutY="156.0" mnemonicParsing="false" text="여성" toggleGroup="$gender">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </RadioButton>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="284.0" layoutY="156.0" prefHeight="19.0" prefWidth="66.0" text="연령구분">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="comboAge" layoutX="371.0" layoutY="155.0" prefHeight="22.0" prefWidth="162.0" promptText="연령대 선택" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="195.0" prefHeight="19.0" prefWidth="90.0" text="좋아하는 것">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="chkMusic" layoutX="117.0" layoutY="197.0" mnemonicParsing="false" text="음악">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chkSport" layoutX="192.0" layoutY="194.0" mnemonicParsing="false" text="스포츠">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chkMovie" layoutX="281.0" layoutY="194.0" mnemonicParsing="false" text="영화">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="btnMemberShip" layoutX="90.0" layoutY="241.0" mnemonicParsing="false" text="회원가입">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCancel" layoutX="324.0" layoutY="240.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="128.0" text="취  소">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
