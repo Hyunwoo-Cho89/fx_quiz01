@@ -32,9 +32,13 @@ public class MemberFunc {
 	String age;
 	ArrayList<String> hbList = new ArrayList();
 	CommonDB db;
-	HashMap<String, CommonDB> map = new HashMap<String, CommonDB>();
+	//HashMap<String, CommonDB> map = new HashMap<String, CommonDB>();
+	public MemberFunc() {
+		cs = new CommonServiceImpl();
+	}
 	
 	public void MemberSave(Parent root) {
+		cs = new CommonServiceImpl();
 		this.root = root;
 		TextField txtId = (TextField)root.lookup("#txtId");
 		TextField txtName = (TextField)root.lookup("#txtName");
@@ -95,14 +99,31 @@ public class MemberFunc {
 			db.setGender(gender);
 			db.setAge(age);
 			db.setHbList(hbList);
-			map.put(id, db);
+			cs.DBSave(id, db);
 			memberReChk(id);
-			cs.exit(root);
+			//cs.exit(root);
 		//}
 			
 	}
 	
-	public void memberReChk(String id) {		
+	public void memberReChk(String id) {
+
+		db = cs.DBSerch(id);
+		/*
+		db.getName();
+		db.getPwd();
+		db.getGender();
+		db.getAge();
+		db.getHbList();
+		System.out.println(db.getName());
+		System.out.println(db.getPwd());
+		System.out.println(db.getGender());
+		System.out.println(db.getAge());
+		for(int i = 0;i<db.getHbList().size();i++) {
+			System.out.println(db.getHbList().get(i));
+		}	
+		*/
+		/*
 		Stage Memeberstage = new Stage();
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("memberSucess.fxml"));
 		root01 = null;
@@ -112,25 +133,11 @@ public class MemberFunc {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		db = new CommonDB();
-		db = map.get(id);
-		/*
-		db.getName();
-		db.getPwd();
-		db.getGender();
-		db.getAge();
-		db.getHbList();
-		*/
-		System.out.println(db.getName());
-		System.out.println(db.getPwd());
-		System.out.println(db.getGender());
-		System.out.println(db.getAge());
-		for(int i = 0;i<db.getHbList().size();i++) {
-			System.out.println(db.getHbList().get(i));
-		}	
+
 		Scene scene = new Scene(root01);
 		Memeberstage.setScene(scene);
 		Memeberstage.show();
+		*/
 	}
 	public void memberSucess() {
 		cs.exit(root01);
