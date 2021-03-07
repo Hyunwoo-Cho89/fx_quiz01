@@ -7,13 +7,14 @@ import javafx.stage.Stage;
 
 public class CommonServiceImpl {
 	private String id=null;
+	private int result = 0;
 	private CommonDB db;
 	private HashMap<String, CommonDB> map;
 	
 	public CommonServiceImpl() {
 		map = new HashMap<String, CommonDB>();
 	}
-	public static void exit(Parent root) {
+	public static void exit(Parent root) {//static 삭제
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
 	}
@@ -37,7 +38,7 @@ public class CommonServiceImpl {
 		for(int i = 0;i<db.getHbList().size();i++) {
 			System.out.println(db.getHbList().get(i));
 		}	
-		System.out.println("찾았습니다.");
+		//System.out.println("찾았습니다.");
 		return db;
 	}
 	
@@ -55,13 +56,14 @@ public class CommonServiceImpl {
 			System.out.println(db1.getHbList().get(i));
 		}	
 		*/
-		System.out.println("저장되었습니다.");
+		//System.out.println("저장되었습니다.");
 
 	}
 	
 	public int idSerch(String id) {
-		int result = 0;
-		if(map.containsKey(id)) {
+		this.id = id;
+		//System.out.println(id+"idSerch");
+		if(map.containsKey(this.id)) {
 			result = 1;
 		}else result = 0;
 		

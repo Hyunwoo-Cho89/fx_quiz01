@@ -15,15 +15,16 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import quiz01.Controller01;
 import quiz01.Common.CommonDB;
 import quiz01.Common.CommonServiceImpl;
 
 	
 
-public class MemberFunc {
+public class MemberFunc{
 	private CommonServiceImpl cs;
 	private Parent root;
-	private Parent root01 = null;
+	private Parent root01;
 	String id;
 	String name;
 	String pwd;
@@ -38,7 +39,6 @@ public class MemberFunc {
 	}
 	
 	public void MemberSave(Parent root) {
-		cs = new CommonServiceImpl();
 		this.root = root;
 		TextField txtId = (TextField)root.lookup("#txtId");
 		TextField txtName = (TextField)root.lookup("#txtName");
@@ -72,26 +72,25 @@ public class MemberFunc {
 			
 		String message=null;
 
-		//콤보 박스 저장
-		if(id==null) {
+		if(txtId.getText().isEmpty()) {
 			message = "아이디를 입력하세요.";
-		}else if(name==null) {
+		}else if (txtName.getText().isEmpty()) {
 			message = "이름을 입력하세요.";
-		}else if(pwd==null) {
+		}else if(txtPwd.getText().isEmpty()) {
 			message = "비밀번호를 입력하세요";
-		}else if(pwd.equals(pwdChk)!=true) {
+		}else if(txtPwd.getText().equals(txtPwdChk.getText())!=true) {
 			message = "비밀번호가 일치 하지 않습니다.";
-		}else if(comboAge == null) {
+		}else if(comboAge.getValue().isEmpty()) {
 			message = "연령대를 선택하세요.";
 		}//else message = null;	
 		
-		//if(message!=null) {
+		if(message!=null) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("error");
 			alert.setHeaderText("입력 창");
 			alert.setContentText(message);
 			alert.show();
-		//}else {
+		}else {
 			db = new CommonDB();
 			db.setId(id);
 			db.setName(name);
@@ -101,13 +100,13 @@ public class MemberFunc {
 			db.setHbList(hbList);
 			cs.DBSave(id, db);
 			memberReChk(id);
-			//cs.exit(root);
-		//}
+			
+		}
 			
 	}
 	
 	public void memberReChk(String id) {
-
+		cs.exit(root);
 		db = cs.DBSerch(id);
 		/*
 		db.getName();

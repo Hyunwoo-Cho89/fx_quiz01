@@ -6,13 +6,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import quiz01.Common.CommonServiceImpl;
 import quiz01.LoginService.LoginServiceImpl;
+import quiz01.MemberService.MemberFunc;
 import quiz01.MemberService.MemberServiceImpl;
 
 public class Controller01 implements Initializable{
 	private Parent root;
 	private LoginServiceImpl ls;
 	private MemberServiceImpl ms;
-	private CommonServiceImpl cs;
+	private MemberFunc mf;
+	protected CommonServiceImpl cs;
 	public void setRoot(Parent root) {
 		this.root = root;
 	}
@@ -20,6 +22,7 @@ public class Controller01 implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {		
 		ls = new LoginServiceImpl();
 		ms = new MemberServiceImpl();
+
 	}
 	
 	public void loginProc() {
@@ -30,7 +33,8 @@ public class Controller01 implements Initializable{
 		cs.exit(root);
 	}
 
-	public void memberShipProc() {
+	public void memberShipProc() {	
 		ms.MemberShip();
+
 	}
 }
