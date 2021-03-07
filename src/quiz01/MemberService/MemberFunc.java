@@ -123,7 +123,6 @@ public class MemberFunc {
 			System.out.println(db.getHbList().get(i));
 		}	
 		*/
-		/*
 		Stage Memeberstage = new Stage();
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("memberSucess.fxml"));
 		root01 = null;
@@ -137,7 +136,7 @@ public class MemberFunc {
 		Scene scene = new Scene(root01);
 		Memeberstage.setScene(scene);
 		Memeberstage.show();
-		*/
+		
 	}
 	public void memberSucess() {
 		cs.exit(root01);
